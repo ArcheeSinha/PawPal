@@ -31,35 +31,35 @@ def submit_sos():
     if name is None or phone is None or animal_type is None or emergency_level is None or description is None:
         return jsonify({"error": "Missing required fields"}), 400
     
-    # Validate name
+    
     if name.isdigit():
         return jsonify({"error": "Invalid Name"}), 400
     
-    # Validate phone number
+    
     if not phone.isdigit() or len(phone) != 10:
         return jsonify({"error": "Invalid phone number"}), 400
     
-    # Validate animal type
+    
     if animal_type not in ["dog", "cat"]:
         return jsonify({"error": "Choose from dog or cat"}), 400
     
-    # Validate emergency level
+    
     if emergency_level not in ["low", "medium", "high"]:
         return jsonify({"error": "Choose from low, medium, high"}), 400
     
-    # Handle location if it's not provided
+    
     if not location:
-        api_key = "YOUR_GOOGLE_API_KEY"  # Replace with your actual API key
+        api_key = "YOUR_GOOGLE_API_KEY" 
         lat, lng = get_real_time_location(api_key)
         if lat and lng:
             location = f"{lat}, {lng}"
         else:
             return jsonify({"error": "Unable to fetch location"}), 500
     
-    # Log the received data
+    
     print(f"New SOS Alert! \nName: {name} \nPhone: {phone} \nLocation: {location} \nAnimal Type: {animal_type} \nEmergency Level: {emergency_level} \nDescription: {description}")
     
-    # Respond with success
+   
     return jsonify({"success": True, "location": location}), 200
 
 
