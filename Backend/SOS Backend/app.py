@@ -141,6 +141,35 @@ def volunteer_support():
 def quiz():
     data= request.get_json()
 
+PETS = [
+    {
+        "name": "Buddy",
+        "type": "dog",
+        "age": "2 years",
+        "gender": "male",
+        "breed": "Golden Retriever",
+        "description": "Buddy is a friendly and energetic dog who loves playing fetch and going for walks."
+    },
+    {
+        "name": "Whiskers",
+        "type": "cat",
+        "age": "1 year",
+        "gender": "female",
+        "breed": "Tabby",
+        "description": "Whiskers is a sweet and playful cat who loves to cuddle and chase toys around the house."
+    },
+    # ... Add other pets similarly
+]
+
+@app.route('/search_pets', methods=['GET'])
+def search_pets():
+    query = request.args.get('q', '').lower()
+    if not query:
+        return jsonify(PETS)
+    
+    filtered = [pet for pet in PETS if query in pet["name"].lower() or query in pet["breed"].lower()]
+    return jsonify(filtered)
+
 
 
 

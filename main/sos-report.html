@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>PawPal - SOS Report</title>
+        <link rel="stylesheet" href="sos-report.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+
+    </head>
+    <body>
+        <div id="header-placeholder"></div>
+        <script>
+            fetch('header.html')
+                .then(res => res.text())
+                .then(data => document.getElementById('header-placeholder').innerHTML = data);
+        </script>
+
+
+        <main class="sos-report-container">
+        <section class="sos-intro">
+            <h2>Report an Animal in Need</h2>
+            <p>Your quick action can save a life</p>
+        </section>
+
+        <form class="sos-form">
+            <h3>If you've spotted a stray, injured, or abandoned animal, please fill out this form.</h3>
+            <label for="name">Your Name</label>
+            <input type="text" id="name" name="name" placeholder="Aryan Raj">
+
+            <label for="phone">Phone Number</label>
+            <input type="tel" id="phone" name="phone" placeholder="9243212345">
+
+            <label for="location">Location</label>
+            <input type="text" id="location" name="location" placeholder="Street address or intersection">
+
+            <label for="animal">Animal Type</label>
+            <select id="animal" name="animal">
+              <option>Select animal type</option>
+              <option>Dog</option>
+              <option>Cat</option>
+              <option>Other</option>
+            </select>
+
+            <label for="emergency">Emergency Level</label>
+            <select id="emergency" name="emergency">
+              <option>Select emergency level</option>
+              <option>Low</option>
+              <option>Medium</option>
+              <option>High</option>
+            </select>
+
+            <label for="description">Description</label>
+            <textarea id="description" name="description" rows="5" placeholder="Please describe the animal and situation in detail"></textarea>
+
+            <label for="photo">Upload Photo (optional)</label>
+            <input type="file" id="photo" name="photo">
+
+            <button type="submit">Submit SOS Report</button>
+        </form>
+
+        <section class="emergency">
+            <h3>Emergency Situations</h3>
+            <p>If the animal is severely injured, in immediate danger, or posing a threat, please call our emergency hotline immediately:</p>
+            <strong>317-738-3911</strong>
+          </section>
+
+        <section class="info-section">
+            <h3>What Information to Include</h3>
+            <ul>
+              <li>Detailed location (address, landmarks, GPS)</li>
+              <li>Physical description of the animal</li>
+              <li>Animal's condition and behavior</li>
+              <li>Photos if possible (but don't risk your safety)</li>
+              <li>Your contact information for follow-up</li>
+            </ul>
+
+            <h3>What Happens Next</h3>
+            <ol>
+                <li>Our team reviews your report (usually within 1-2 hours)</li>
+                <li>A rescue coordinator may contact you for more details</li>
+                <li>We dispatch a rescue team based on urgency</li>
+                <li>The animal is brought to our shelter for assessment</li>
+                <li>You'll receive an update on the animal's status</li>
+              
+            </ol>
+
+            <p>Thank you for being their voice! Your compassion saves lives.</p>
+        </section>
+        
+        <section class="safety-tips">
+            <h3>Safety Tips When Approaching Stray Animals</h3>
+            <ul>
+              <li><strong>1. Keep Your Distance:</strong> Approach slowly and don't corner them. Stay calm and speak softly.</li>
+              <li><strong>2. Avoid Direct Eye Contact:</strong> It can be perceived as threatening to scared animals.</li>
+              <li><strong>3. Offer Food Carefully:</strong> Place it down and step back rather than hand-feeding.</li>
+              <li><strong>4. Never Force Interaction:</strong> If the animal seems aggressive or frightened, keep your distance and call us.</li>
+            </ul>
+          </section>
+        </main>
+      
+        <footer class="footer">
+          <div class="footer-about">
+            <h4>PawPal</h4>
+            <p>Our mission is to rescue, rehabilitate, and rehome animals in need.</p>
+          </div>
+          <div class="footer-links">
+            <h4>Quick Links</h4>
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="meet-pets.html">Meet Pets</a></li>
+              <li><a href="about.html">About Us</a></li>
+              <li><a href="donate.html">Donate</a></li>
+              <li><a href="support/volunteer.html">Volunteer</a></li>
+              <li><a href="contact.html">Contact</a></li>
+            </ul>
+          </div>
+          <div class="footer-resources">
+            <h4>Resources</h4>
+            <ul>
+              <li><a href="#">Pet Care Tips</a></li>
+              <li><a href="#">Adoption Guide</a></li>
+              <li><a href="faq.html">FAQs</a></li>
+              <li><a href="#">Events</a></li>
+              <li><a href="#">Success Stories</a></li>
+              <li><a href="#">Blog</a></li>
+            </ul>
+          </div>
+          <div class="footer-newsletter">
+            <h4>Newsletter</h4>
+            <p>Subscribe for updates on available pets, events, and more.</p>
+            <input type="email" placeholder="Your email">
+            <p>We respect your privacy. Unsubscribe at any time.</p>
+          </div>
+          <div class="footer-bottom">
+            <p>&copy; 2025 PawPal. All rights reserved.</p>
+            <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a> | <a href="#">Accessibility</a>
+          </div>
+        </footer>
+    </body>
+</html>
+      
+
+
