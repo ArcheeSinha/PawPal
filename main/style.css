@@ -1,0 +1,75 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Times New Roman', Times, serif;
+    text-decoration: none;
+    scroll-behavior: smooth;
+    list-style: none;/*To remove the dots from the top of screen*/
+}
+.fa-paw{
+    font-size: 2rem;
+} 
+.logo{
+    display: flex;
+    justify-content: flex-start; 
+    padding: 10px 10px;
+}
+.header{
+    height: 60px;
+    position: static;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgb(139, 69, 19);
+    color: white;
+}
+.home{
+    background-image: url(homepage.jpg);
+    background-size: cover;
+    height: 90vh;
+}
+.nav-links{
+    display: flex;
+    gap: 4rem;
+}
+
+li a{
+    color: white;
+}
+
+.heading{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 20%;
+    font-size: 4rem;
+    color: white;
+}
+
+.para{
+    display: flex;
+    justify-content: center;
+    font-size: 2rem;
+    color: white;
+}
+.button-grp{
+    display: flex;
+    justify-content: center;
+    padding-top: 10px;
+    gap: 5rem;
+    ;
+}
+.button{
+    padding: 20px;
+    background-color: rgb(139, 69, 19);
+    border-color: transparent;
+    border-radius: 2rem;
+    font-size: 2rem;
+    cursor: pointer;
+    color: white;
+}
+
+.button:hover{
+    transform: scale(1.05);
+}
