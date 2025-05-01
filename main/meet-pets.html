@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>PawPal - Meet Our Pets</title>
+  <link rel="stylesheet" href="meet-pets.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+</head>
+<body>
+
+  <div id="header-placeholder"></div>
+  <script>
+    fetch('header.html')
+      .then(res => res.text())
+      .then(data => document.getElementById('header-placeholder').innerHTML = data);
+  </script>
+
+  <main class="pets-container">
+    <section class="intro">
+      <h2>Meet Our Pets</h2>
+      <p>Browse our wonderful selection of pets waiting for their forever homes. Each one has a unique personality and is looking for the perfect family.</p>
+    </section>
+
+    <section class="filters">
+      <input type="text" placeholder="Search by name, breed, etc.">
+      <div class="filter-buttons">
+        <button>All Pets</button>
+        <button>Dogs</button>
+        <button>Cats</button>
+        <button>Small Pets</button>
+      </div>
+    </section>
+
+    <section class="pet-cards">
+      <!-- Sample Pet Card -->
+      <div class="pet-card">
+        <h3>Buddy - Golden Retriever</h3>
+        <p><strong>Buddy</strong> | Dog | 2 years • Male • Golden Retriever</p>
+        <p>Buddy is a friendly and energetic dog who loves playing fetch and going for walks.</p>
+        <button class="meet-button">Meet Buddy</button>
+      </div>
+
+      <div class="pet-card">
+        <h3>Whiskers - Tabby</h3>
+        <p><strong>Whiskers</strong> | Cat | 1 year • Female • Tabby</p>
+        <p>Whiskers is a sweet and playful cat who loves to cuddle and chase toys around the house.</p>
+        <button class="meet-button">Meet Whiskers</button>
+      </div>
+
+      <div class="pet-card">
+        <h3>Max - Labrador</h3>
+        <p><strong>Max</strong> | Dog | 3 years • Male • Labrador</p>
+        <p>Max is a gentle and friendly dog who gets along well with children and other pets.</p>
+        <button class="meet-button">Meet Max</button>
+      </div>
+
+      <div class="pet-card">
+        <h3>Bella - Calico</h3>
+        <p><strong>Bella</strong> | Cat | 2 years • Female • Calico</p>
+        <p>Bella is a calm and affectionate cat who enjoys lounging in sunny spots and gentle pets.</p>
+        <button class="meet-button">Meet Bella</button>
+      </div>
+
+      <div class="pet-card">
+        <h3>Rocky - German Shepherd</h3>
+        <p><strong>Rocky</strong> | Dog | 4 years • Male • German Shepherd</p>
+        <p>Rocky is an intelligent and loyal dog who loves to learn new tricks and commands.</p>
+        <button class="meet-button">Meet Rocky</button>
+      </div>
+
+      <div class="pet-card">
+        <h3>Luna - Siamese</h3>
+        <p><strong>Luna</strong> | Cat | 3 years • Female • Siamese</p>
+        <p>Luna is a vocal and social cat who enjoys being the center of attention.</p>
+        <button class="meet-button">Meet Luna</button>
+      </div>
+
+      <div class="pet-card">
+        <h3>Charlie - Beagle</h3>
+        <p><strong>Charlie</strong> | Dog | 1 year • Male • Beagle</p>
+        <p>Charlie is a curious and friendly puppy who loves exploring and meeting new people.</p>
+        <button class="meet-button">Meet Charlie</button>
+      </div>
+
+      <div class="pet-card">
+        <h3>Lily - Persian</h3>
+        <p><strong>Lily</strong> | Cat | 2 years • Female • Persian</p>
+        <p>Lily is a gentle and laid-back cat who enjoys quiet time and gentle pets.</p>
+        <button class="meet-button">Meet Lily</button>
+      </div>
+    </section>
+
+    <section class="adoption-process">
+      <h3>Our Adoption Process</h3>
+      <ol>
+        <li><strong>Application:</strong> Fill out our adoption application to start the process and find your perfect match.</li>
+        <li><strong>Meet & Greet:</strong> Visit our shelter to meet your potential new family member and see if it's a good match.</li>
+        <li><strong>Welcome Home:</strong> Complete the adoption process and welcome your new pet into their forever home.</li>
+      </ol>
+      <a href="https://docs.google.com/forms/u/0/d/1NGMkliSGu6NtRmIi9iaY0Hgd_XQdpZemNC2-apOZQHM/edit?usp=forms_home" target="_blank">
+        <button class="meet-button">Start Application</button>
+      </a>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-about">
+      <h4>PawPal</h4>
+      <p>Connecting pets with loving homes since 2013. Our mission is to rescue, rehabilitate, and rehome animals in need.</p>
+    </div>
+    <div class="footer-links">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="meet-pets.html">Meet Pets</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="donate.html">Donate</a></li>
+        <li><a href="support/volunteer.html">Volunteer</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+    <div class="footer-resources">
+      <h4>Resources</h4>
+      <ul>
+        <li><a href="#">Pet Care Tips</a></li>
+        <li><a href="#">Adoption Guide</a></li>
+        <li><a href="faq.html">FAQs</a></li>
+        <li><a href="#">Events</a></li>
+        <li><a href="#">Success Stories</a></li>
+        <li><a href="#">Blog</a></li>
+      </ul>
+    </div>
+    <div class="footer-newsletter">
+      <h4>Newsletter</h4>
+      <p>Subscribe to our newsletter for updates on available pets, events, and more.</p>
+      <input type="email" placeholder="Your email">
+      <p>We respect your privacy. Unsubscribe at any time.</p>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 PawPal. All rights reserved.</p>
+      <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a> | <a href="#">Accessibility</a>
+    </div>
+  </footer>
+
+</body>
+</html>

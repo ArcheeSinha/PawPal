@@ -1,0 +1,200 @@
+/* meet-pets.css */
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #fefefe;
+    color: #333;
+  }
+  
+  .pets-container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 2rem 1rem;
+  }
+  
+  .intro {
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+  
+  .intro h2 {
+    font-size: 2.5rem;
+    color: #2A2F4F;
+  }
+  
+  .intro p {
+    font-size: 1.1rem;
+    color: #555;
+  }
+  
+  .filters {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+  }
+  
+  .filters input[type="text"] {
+    width: 80%;
+    max-width: 500px;
+    padding: 0.7rem;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 1rem;
+  }
+  
+  .filter-buttons {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+  }
+  
+  .filter-buttons button {
+    padding: 0.5rem 1rem;
+    border: 1px solid #917FB3;
+    background-color: #E5BEEC;
+    color: #2A2F4F;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  
+  .filter-buttons button:hover {
+    background-color: #917FB3;
+    color: #fff;
+  }
+  
+  .pet-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+    gap: 1.5rem;
+  }
+  
+  .pet-card {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    transition: 0.3s ease;
+  }
+  
+  .pet-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+  
+  .pet-card h3 {
+    margin-top: 0;
+    color: #2A2F4F;
+  }
+  
+  .pet-card p {
+    margin: 0.5rem 0;
+  }
+  
+  .meet-button {
+    display: inline-block;
+    margin-top: 0.7rem;
+    padding: 0.5rem 1.2rem;
+    background-color: #FDE2F3;
+    border: none;
+    color: #2A2F4F;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .meet-button:hover {
+    background-color: #917FB3;
+    color: white;
+  }
+  
+  .adoption-process {
+    margin-top: 3rem;
+    padding: 2rem;
+    background-color: #f9f9f9;
+    border-left: 5px solid #917FB3;
+    border-radius: 8px;
+  }
+  
+  .adoption-process h3 {
+    color: #2A2F4F;
+  }
+  
+  .adoption-process ol {
+    padding-left: 1.5rem;
+    line-height: 1.6;
+    color: #444;
+  }
+  
+  .footer {
+    background-color: #2A2F4F;
+    color: #fff;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 2rem 1rem;
+    margin-top: 4rem;
+    gap: 2rem;
+  }
+  
+  .footer h4 {
+    margin-bottom: 0.5rem;
+    color: #FDE2F3;
+  }
+  
+  .footer ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .footer ul li a {
+    color: #ddd;
+    text-decoration: none;
+    font-size: 0.95rem;
+  }
+  
+  .footer ul li a:hover {
+    text-decoration: underline;
+    color: #fff;
+  }
+  
+  .footer-about,
+  .footer-links,
+  .footer-resources,
+  .footer-newsletter {
+    flex: 1 1 200px;
+  }
+  
+  .footer-newsletter input[type="email"] {
+    width: 100%;
+    padding: 0.5rem;
+    border-radius: 5px;
+    border: none;
+    margin: 0.5rem 0;
+  }
+  
+  .footer-bottom {
+    width: 100%;
+    border-top: 1px solid #555;
+    padding-top: 1rem;
+    text-align: center;
+    font-size: 0.85rem;
+    color: #ccc;
+  }
+  
+  .footer-bottom a {
+    color: #ccc;
+    margin: 0 0.5rem;
+    text-decoration: none;
+  }
+  
+  .footer-bottom a:hover {
+    text-decoration: underline;
+  }
+  
