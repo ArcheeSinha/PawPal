@@ -28,7 +28,7 @@
 .home{
     background-image: url(homepage.jpg);
     background-size: cover;
-    height: 90vh;
+    height: 65vh;
 }
 .nav-links{
     display: flex;
