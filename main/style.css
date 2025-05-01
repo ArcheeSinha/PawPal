@@ -17,9 +17,8 @@
 }
 .header{
     height: 60px;
-    position: static;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
     align-items: center;
     background-color: rgb(139, 69, 19);
     color: white;
@@ -31,6 +30,7 @@
 }
 .nav-links{
     display: flex;
+    justify-content: flex-start;
     gap: 4rem;
 }
 
