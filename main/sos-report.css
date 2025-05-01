@@ -185,3 +185,7 @@ li a{
     font-size: 0.9rem;
 }
 
+.dabbe{
+    display: flex;
+    gap: 4rem;
+}
