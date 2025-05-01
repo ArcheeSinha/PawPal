@@ -5,18 +5,30 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>PawPal - SOS Report</title>
         <link rel="stylesheet" href="sos-report.css">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     </head>
     <body>
+      <header class="header">
+        <div class="logo">
+        <i class="fa-solid fa-paw"></i>
+        <h1 class="site-title">PawPal</h1>
+        </div>
+        <div>
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#meet-pets">Meet Pets</a></li>
+            <li><a href="#about">About us</a></li>
+            <li><a href="#donate">Donate</a></li> 
+            <li><a href="#support">Support us</a></li>
+            <li><a href="sos-report.html">SOS Report</a></li>
+            <li><a href="#faq">F&Qs</a></li>
+            <li><a href="#quiz">Quiz</a></li>
+            <li><a href="#contact">Contact us</a></li>
+        </ul>
+        </div>
+    </header>
         <div id="header-placeholder"></div>
-        <script>
-            fetch('header.html')
-                .then(res => res.text())
-                .then(data => document.getElementById('header-placeholder').innerHTML = data);
-        </script>
-
-
         <main class="sos-report-container">
         <section class="sos-intro">
             <h2>Report an Animal in Need</h2>
