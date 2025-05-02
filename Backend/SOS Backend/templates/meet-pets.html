@@ -4,17 +4,13 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>PawPal - Meet Our Pets</title>
-  <link rel="stylesheet" href="meet-pets.css" />
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/meet-pets.css') }}">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
 </head>
 <body>
 
-  <div id="header-placeholder"></div>
-  <script>
-    fetch('header.html')
-      .then(res => res.text())
-      .then(data => document.getElementById('header-placeholder').innerHTML = data);
-  </script>
+  <!-- Include the header -->
+  {% include 'header.html' %}
 
   <main class="pets-container">
     <section class="intro">
@@ -117,6 +113,7 @@
         <li><a href="about.html">About Us</a></li>
         <li><a href="donate.html">Donate</a></li>
         <li><a href="support/volunteer.html">Volunteer</a></li>
+        <li><a href="sos-report.html">SOS Report</a></li>
         <li><a href="contact.html">Contact</a></li>
       </ul>
     </div>

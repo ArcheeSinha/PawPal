@@ -141,6 +141,11 @@ def volunteer_support():
 
     return jsonify({"success": True, "message": "Thank you for your interest.We will contact you soon"}), 200
 
+@app.route('/quiz', methods=['GET'])
+def quiz():
+    return render_template('quiz.html')
+
+
 @app.route('/quiz', methods=['POST'])
 
 def quiz():
@@ -166,17 +171,81 @@ PETS = [
     # ... Add other pets similarly
 ]
 
-@app.route('/search_pets', methods=['GET'])
+
+@app.route('/meet-pets')
+def meet_pets():
+    return render_template('meet-pets.html')
+
+
+@app.route('/search_pets', methods=['GET','POST'])
 def search_pets():
-    query = request.args.get('q', '').lower()
-    if not query:
-        return jsonify(PETS)
-    
-    filtered = [pet for pet in PETS if query in pet["name"].lower() or query in pet["breed"].lower()]
-    return jsonify(filtered)
-
-
-
+    pets = [
+        {
+            "name": "Buddy",
+            "type": "Dog",
+            "age": "2 years",
+            "gender": "Male",
+            "breed": "Golden Retriever",
+            "description": "Buddy is a friendly and energetic dog who loves playing fetch and going for walks."
+        },
+        {
+            "name": "Whiskers",
+            "type": "Cat",
+            "age": "1 year",
+            "gender": "Female",
+            "breed": "Tabby",
+            "description": "Whiskers is a sweet and playful cat who loves to cuddle and chase toys around the house."
+        },
+        {
+            "name": "Max",
+            "type": "Dog",
+            "age": "3 years",
+            "gender": "Male",
+            "breed": "Labrador",
+            "description": "Max is a gentle and friendly dog who gets along well with children and other pets."
+        },
+        {
+            "name": "Bella",
+            "type": "Cat",
+            "age": "2 years",
+            "gender": "Female",
+            "breed": "Calico",
+            "description": "Bella is a calm and affectionate cat who enjoys lounging in sunny spots and gentle pets."
+        },
+        {
+            "name": "Rocky",
+            "type": "Dog",
+            "age": "4 years",
+            "gender": "Male",
+            "breed": "German Shepherd",
+            "description": "Rocky is an intelligent and loyal dog who loves to learn new tricks and commands."
+        },
+        {
+            "name": "Luna",
+            "type": "Cat",
+            "age": "3 years",
+            "gender": "Female",
+            "breed": "Siamese",
+            "description": "Luna is a vocal and social cat who enjoys being the center of attention."
+        },
+        {
+            "name": "Charlie",
+            "type": "Dog",
+            "age": "1 year",
+            "gender": "Male",
+            "breed": "Beagle",
+            "description": "Charlie is a curious and friendly puppy who loves exploring and meeting new people."
+        },
+        {
+            "name": "Lily",
+            "type": "Cat",
+            "age": "2 years",
+            "gender": "Female",
+            "breed": "Persian",
+            "description": "Lily is a gentle and laid-back cat who enjoys quiet time and gentle pets."
+        }
+    ]
+    return jsonify(pets)
 
 
 
