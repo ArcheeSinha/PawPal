@@ -2,7 +2,7 @@ from flask import Flask,request,jsonify
 import requests
 import datetime
 import os
-
+from flask import render_template
 app = Flask (__name__)
 
 UPLOAD_FOLDER = r"C:\Users\91995\Desktop\PawPal\PawPal\Backend\SOS Backend\uploads"
@@ -62,19 +62,22 @@ def donate():
 
     return jsonify({"success": True, "message": "Thank you for your donation!"}), 200
 
+@app.route('/sos-report', methods=['GET', 'POST'])
+def sos_report():
+    return render_template('sos-report.html')
 
 
 @app.route('/submit_sos', methods=['POST'])
 
 def submit_sos():
-    data = request.get_json()
+    name = request.form.get("name")
+    phone = request.form.get("phone")
+    location = request.form.get("location")
+    animal_type = request.form.get("animal_type")
+    emergency_level = request.form.get("emergency_level")
+    description = request.form.get("description")
+    photo = request.files.get("photo")  # For file input
 
-    name = data.get("name")
-    phone = data.get("phone")
-    location = data.get("location")
-    animal_type = data.get("animal_type")
-    emergency_level = data.get("emergency_level")
-    description = data.get("description")
 
     # Check for missing fields
     if name is None or phone is None or animal_type is None or emergency_level is None or description is None:
@@ -104,7 +107,9 @@ def submit_sos():
         else:
             return jsonify({"error": "Unable to fetch location"}), 400
 
-
+    if photo:
+        filename = save_image(photo)
+        
 
     print(f"New SOS Alert! \nName: {name} \nPhone: {phone} \nLocation: {location} \nAnimal Type: {animal_type} \nEmergency Level: {emergency_level} \nDescription: {description}")
     
@@ -140,7 +145,7 @@ def volunteer_support():
 
 def quiz():
     data= request.get_json()
-
+    return jsonify({"success": True, "message": "Quiz received"}), 200
 PETS = [
     {
         "name": "Buddy",
