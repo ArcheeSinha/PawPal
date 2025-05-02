@@ -1,9 +1,32 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Quiz Results</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>result</title>
+    <link rel="stylesheet" href="result.css">
 </head>
 <body>
+    <header class="header">
+        <div class="logo">
+          <i class="fa-solid fa-paw"></i>
+          <h1 class="site-title">PawPal</h1>
+        </div>
+        <div>
+          <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="meet-pets.html">Meet Pets</a></li>
+            <li><a href="about.html">About us</a></li>
+            <li><a href="donate.html">Donate</a></li>
+            <li><a href="support.html">Support us</a></li>
+            <li><a href="sos-report.html">SOS Report</a></li>
+            <li><a href="faq.html">F&Qs</a></li>
+            <li><a href="quiz.html">Quiz</a></li>
+            <li><a href="contact.html">Contact us</a></li>
+          </ul>
+        </div>
+    </header>
+    <div class="result">
     <h1>Recommended Pet for You</h1>
     {% if pet %}
         <h2>{{ pet.name }}</h2>
@@ -15,5 +38,44 @@
     {% else %}
         <p>No pet recommendation found.</p>
     {% endif %}
+    </div>
+    <footer class="footer">
+        <div class="footer-about">
+          <h3>PawPal</h3>
+          <p>Our mission is to rescue, rehabilitate, and rehome animals in need.</p>
+        </div>
+        <div class="footer-links">
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="meet-pets.html">Meet Pets</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="donate.html">Donate</a></li>
+            <li><a href="support/volunteer.html">Volunteer</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-resources">
+          <h3>Resources</h3>
+          <ul>
+            <li><a href="#">Pet Care Tips</a></li>
+            <li><a href="#">Adoption Guide</a></li>
+            <li><a href="faq.html">FAQs</a></li>
+            <li><a href="#">Events</a></li>
+            <li><a href="#">Success Stories</a></li>
+            <li><a href="#">Blog</a></li>
+          </ul>
+        </div>
+        <div class="footer-newsletter">
+          <h4>Newsletter</h4>
+          <p>Subscribe for updates on available pets, events, and more.</p>
+          <input type="email" placeholder="Your email">
+          <p>We respect your privacy. Unsubscribe at any time.</p>
+        </div>
+        <div class="footer-bottom">
+          <p>&copy; 2025 PawPal. All rights reserved.</p>
+          <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a> | <a href="#">Accessibility</a>
+        </div>
+      </footer>
 </body>
 </html>
