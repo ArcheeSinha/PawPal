@@ -60,6 +60,7 @@ body {
   .intro p {
     font-size: 1.1rem;
     color: #555;
+    padding-top: 1rem;
   }
   
   .filters {
