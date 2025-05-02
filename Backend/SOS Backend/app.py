@@ -3,6 +3,7 @@ import requests
 import datetime
 import os
 from flask import render_template
+import random 
 app = Flask (__name__)
 
 UPLOAD_FOLDER = r"C:\Users\91995\Desktop\PawPal\PawPal\Backend\SOS Backend\uploads"
@@ -33,34 +34,34 @@ def get_real_time_location():
 
 
 
-@app.route('/donate', methods=['POST'])
+# @app.route('/donate', methods=['POST'])
 
-def donate():
-    data = request.get_json()
+# def donate():
+#     data = request.get_json()
 
-    name = data.get("name")
-    email = data.get("email")
-    amount = data.get("amount")
+#     name = data.get("name")
+#     email = data.get("email")
+#     amount = data.get("amount")
 
-    if not name or not email or not amount:
-        return jsonify({"error": "Missing required fields"}), 400
+#     if not name or not email or not amount:
+#         return jsonify({"error": "Missing required fields"}), 400
 
-    if name.isdigit():
-        return jsonify({"error": "Invalid name"}), 400
+#     if name.isdigit():
+#         return jsonify({"error": "Invalid name"}), 400
 
-    if "@" not in email or "." not in email:
-        return jsonify({"error": "Invalid email address"}), 400
+#     if "@" not in email or "." not in email:
+#         return jsonify({"error": "Invalid email address"}), 400
 
-    try:
-        amount = float(amount)
-        if amount <= 0:
-            return jsonify({"error": "Amount must be greater than 0"}), 400
-    except ValueError:
-        return jsonify({"error": "Amount must be a number"}), 400
+#     try:
+#         amount = float(amount)
+#         if amount <= 0:
+#             return jsonify({"error": "Amount must be greater than 0"}), 400
+#     except ValueError:
+#         return jsonify({"error": "Amount must be a number"}), 400
 
-    print(f"New Donation Received! \nName: {name} \nEmail: {email} \nAmount: ${amount}")
+#     print(f"New Donation Received! \nName: {name} \nEmail: {email} \nAmount: ${amount}")
 
-    return jsonify({"success": True, "message": "Thank you for your donation!"}), 200
+#     return jsonify({"success": True, "message": "Thank you for your donation!"}), 200
 
 @app.route('/sos-report', methods=['GET', 'POST'])
 def sos_report():
@@ -116,60 +117,155 @@ def submit_sos():
    
     return jsonify({"success": True, "location": location}), 200
 
-@app.route('/support_us/volunteer', methods=['POST'])
+# @app.route('/support_us/volunteer', methods=['POST'])
 
-def volunteer_support():
-    data = request.get_json()
+# def volunteer_support():
+#     data = request.get_json()
 
-    name = data.get("name","").strip()
-    email = data.get("email","").strip()
-    phone = data.get("phone","").strip()
+#     name = data.get("name","").strip()
+#     email = data.get("email","").strip()
+#     phone = data.get("phone","").strip()
 
-    if not name or not email or not phone:
-        return jsonify({"error": "Missing required fields"}), 400
+#     if not name or not email or not phone:
+#         return jsonify({"error": "Missing required fields"}), 400
 
-    if name.isdigit():
-        return jsonify({"error": "Invalid name"}), 400
+#     if name.isdigit():
+#         return jsonify({"error": "Invalid name"}), 400
 
-    if "@" not in email or "." not in email:
-        return jsonify({"error": "Invalid email address"}), 400
+#     if "@" not in email or "." not in email:
+#         return jsonify({"error": "Invalid email address"}), 400
 
-    if not phone.isdigit() or len(phone) != 10:
-        return jsonify({"error": "Invalid phone number"}), 400
+#     if not phone.isdigit() or len(phone) != 10:
+#         return jsonify({"error": "Invalid phone number"}), 400
 
-    print(f"Interest Submitted! \nName: {name} \nEmail: {email}")
+#     print(f"Interest Submitted! \nName: {name} \nEmail: {email}")
 
-    return jsonify({"success": True, "message": "Thank you for your interest.We will contact you soon"}), 200
-
-@app.route('/quiz', methods=['GET'])
-def quiz():
-    return render_template('quiz.html')
+#     return jsonify({"success": True, "message": "Thank you for your interest.We will contact you soon"}), 200
 
 
-@app.route('/quiz', methods=['POST'])
-
-def quiz():
-    data= request.get_json()
-    return jsonify({"success": True, "message": "Quiz received"}), 200
 PETS = [
     {
         "name": "Buddy",
-        "type": "dog",
-        "age": "2 years",
-        "gender": "male",
+        "type": "Dog",
         "breed": "Golden Retriever",
-        "description": "Buddy is a friendly and energetic dog who loves playing fetch and going for walks."
+        "age": "2 years",
+        "personality": "Friendly, Energetic",
+        "ideal_owner": "Active individuals or families with a backyard"
+    },
+    {
+        "name": "Luna",
+        "type": "Cat",
+        "breed": "Siamese",
+        "age": "3 years",
+        "personality": "Vocal, Social",
+        "ideal_owner": "Someone who spends time at home and wants a talkative companion"
+    },
+    {
+        "name": "Max",
+        "type": "Dog",
+        "breed": "Labrador Retriever",
+        "age": "4 years",
+        "personality": "Gentle, Loyal",
+        "ideal_owner": "Families with kids or first-time pet owners"
     },
     {
         "name": "Whiskers",
-        "type": "cat",
-        "age": "1 year",
-        "gender": "female",
+        "type": "Cat",
         "breed": "Tabby",
-        "description": "Whiskers is a sweet and playful cat who loves to cuddle and chase toys around the house."
+        "age": "1 year",
+        "personality": "Playful, Affectionate",
+        "ideal_owner": "Small apartment dwellers or students"
     },
-    # ... Add other pets similarly
+    {
+        "name": "Rocky",
+        "type": "Dog",
+        "breed": "German Shepherd",
+        "age": "5 years",
+        "personality": "Protective, Smart",
+        "ideal_owner": "Experienced dog owners or security-conscious homes"
+    },
+    {
+        "name": "Bella",
+        "type": "Cat",
+        "breed": "Calico",
+        "age": "2 years",
+        "personality": "Calm, Independent",
+        "ideal_owner": "People who want a low-maintenance companion"
+    },
+    {
+        "name": "Charlie",
+        "type": "Dog",
+        "breed": "Beagle",
+        "age": "1.5 years",
+        "personality": "Curious, Cheerful",
+        "ideal_owner": "Families who enjoy outdoor activities"
+    }
 ]
+
+@app.route('/quiz', methods=['GET', 'POST'])
+def quiz():
+    if request.method == 'POST':
+        answers = request.form
+
+        # Get user answers from the form
+        lifestyle = answers.get('lifestyle')
+        home_space = answers.get('home-space')
+        time_for_pet = answers.get('time-for-pets')
+        pet_experience = answers.get('pet-experience')
+        pet_companion = answers.get('pet-companion')
+
+        # Matching logic
+        recommended_pet = None
+
+        if lifestyle == 'Active' and home_space == 'Large':
+            recommended_pet = "Buddy"
+        elif lifestyle == 'Relaxed' and home_space == 'Small':
+            recommended_pet = "Whiskers"
+        elif pet_experience == 'Beginner' and pet_companion == 'Companion':
+            recommended_pet = "Max"
+        elif lifestyle == 'Active' and pet_companion == 'Companion':
+            recommended_pet = "Charlie"
+        elif pet_experience == 'Experienced' and home_space == 'Large':
+            recommended_pet = "Rocky"
+        else:
+            # Random fallback if no exact match
+            recommended_pet = random.choice([pet['name'] for pet in PETS])
+
+        # Find the pet object
+        pet = next((pet for pet in PETS if pet['name'] == recommended_pet), None)
+        
+        if pet:
+            return render_template('result.html', pet=pet)
+        else:
+            return "No matching pet found", 400
+
+    # GET request - show the form
+    return render_template('quiz.html')
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 @app.route('/meet-pets')

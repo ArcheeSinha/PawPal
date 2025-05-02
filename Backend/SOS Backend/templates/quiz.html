@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pet Adoption Quiz</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/quiz.css') }}">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
+</head>
+<body>
+
+    <h1>Pet Adoption Quiz</h1>
+
+    <!-- Form updated to send data using POST to the /quiz endpoint -->
+    <form id="quizForm" method="POST" action="/quiz">
+        <div class="question">
+            <label for="lifestyle">1. What is your lifestyle like?</label><br>
+            <input type="radio" name="lifestyle" value="Active" required> Active<br>
+            <input type="radio" name="lifestyle" value="Relaxed" required> Relaxed<br>
+            <input type="radio" name="lifestyle" value="Busy" required> Busy<br>
+        </div>
+
+        <div class="question">
+            <label for="home-space">2. How much space do you have at home?</label><br>
+            <input type="radio" name="home-space" value="Large" required> Large<br>
+            <input type="radio" name="home-space" value="Medium" required> Medium<br>
+            <input type="radio" name="home-space" value="Small" required> Small<br>
+        </div>
+
+        <div class="question">
+            <label for="time-for-pets">3. How much time can you dedicate to your pet?</label><br>
+            <input type="radio" name="time-for-pets" value="Plenty" required> Plenty<br>
+            <input type="radio" name="time-for-pets" value="Some" required> Some<br>
+            <input type="radio" name="time-for-pets" value="Little" required> Little<br>
+        </div>
+
+        <div class="question">
+            <label for="pet-experience">4. What is your experience with pets?</label><br>
+            <input type="radio" name="pet-experience" value="Experienced" required> Experienced<br>
+            <input type="radio" name="pet-experience" value="Beginner" required> Beginner<br>
+            <input type="radio" name="pet-experience" value="None" required> None<br>
+        </div>
+
+        <div class="question">
+            <label for="pet-companion">5. Would you prefer a companion pet or a more independent one?</label><br>
+            <input type="radio" name="pet-companion" value="Companion" required> Companion<br>
+            <input type="radio" name="pet-companion" value="Independent" required> Independent<br>
+        </div>
+
+        <button type="submit">Submit</button>
+    </form>
+
+</body>
+</html>
