@@ -4,7 +4,8 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>PawPal - SOS Report</title>
-        <link rel="stylesheet" href="sos-report.css">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/sos-report.css') }}">
+
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     </head>
@@ -35,7 +36,8 @@
             <p>Your quick action can save a life</p>
         </section>
 
-        <form class="sos-form">
+        <form class="sos-form" action="/submit_sos" method="POST" enctype="multipart/form-data">
+
             <h3>If you've spotted a stray, injured or abandoned animal, please fill out this form.</h3>
             <label for="name">Your Name</label>
             <input type="text" id="name" name="name" placeholder="Aryan Raj">
@@ -46,27 +48,27 @@
             <label for="location">Location</label>
             <input type="text" id="location" name="location" placeholder="Street address or intersection">
 
-            <label for="animal">Animal Type</label>
-            <select id="animal" name="animal">
-              <option>Select animal type</option>
-              <option>Dog</option>
-              <option>Cat</option>
-              <option>Other</option>
+            <label for="animal_type">Animal Type</label>
+            <select id="animal_type" name="animal_type" required>
+              <option value="">Select animal type</option>
+              <option value="dog">Dog</option>
+              <option value="cat">Cat</option>
+              <option value="other">Other</option>
             </select>
 
-            <label for="emergency">Emergency Level</label>
-            <select id="emergency" name="emergency">
-              <option>Select emergency level</option>
-              <option>Low</option>
-              <option>Medium</option>
-              <option>High</option>
+            <label for="emergency_level">Emergency Level</label>
+            <select id="emergency_level" name="emergency_level" required>
+              <option value="">Select emergency level</option>
+              <option value="low">Low</option>
+              <option value="medium">Medium</option>
+              <option value="high">High</option>
             </select>
 
             <label for="description">Description</label>
             <textarea id="description" name="description" rows="5" placeholder="Please describe the animal and situation in detail"></textarea>
 
-            <label for="photo">Upload Photo (optional)</label>
-            <input type="file" id="photo" name="photo">
+            <label for="photo">Upload Photo</label>
+            <input type="file" name="photo" accept=".jpg,image/jpeg" required>
 
             <button type="submit">Submit SOS Report</button>
         </form>
