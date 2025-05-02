@@ -24,15 +24,18 @@ main.sos-report-container {
 }
 .nav-links{
     display: flex;
-    gap: 2rem;
+    gap: 4rem;
     color: white;
 }
+
 li a{
     color: white;
 }
+
 .fa-paw{
     font-size: 2rem;
 }
+
 .logo{
     display: flex;
 }
