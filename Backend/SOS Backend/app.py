@@ -1,8 +1,7 @@
-from flask import Flask,request,jsonify
+from flask import Flask,request,jsonify,render_template,redirect,url_for
 import requests
 import datetime
 import os
-from flask import render_template
 import random 
 app = Flask (__name__)
 
@@ -113,9 +112,13 @@ def submit_sos():
         
 
     print(f"New SOS Alert! \nName: {name} \nPhone: {phone} \nLocation: {location} \nAnimal Type: {animal_type} \nEmergency Level: {emergency_level} \nDescription: {description}")
-    
    
-    return jsonify({"success": True, "location": location}), 200
+    return redirect(url_for('thank_you'))
+
+@app.route('/thankyou')
+def thank_you():
+    return render_template('thankyou.html')
+
 
 # @app.route('/support_us/volunteer', methods=['POST'])
 
