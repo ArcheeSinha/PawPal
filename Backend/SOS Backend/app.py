@@ -12,9 +12,13 @@ UPLOAD_FOLDER = r"C:\Users\91995\Desktop\PawPal\PawPal\Backend\SOS Backend\uploa
 if not os.path.exists(UPLOAD_FOLDER):
     os.makedirs(UPLOAD_FOLDER)
 
-def save_image(image):
+for level in ['low','medium','high']:
+    os.makedirs(os.path.join(UPLOAD_FOLDER,level),exist_ok=True)
+
+def save_image(image, emergency_level):
     timestamp = datetime.datetime.now().strftime("%Y%m%d%H%M%S")
     filename = f"image_{timestamp}.jpg"
+    level_folder = os.path.join(UPLOAD_FOLDER, emergency_level.lower())
     filepath = os.path.join(UPLOAD_FOLDER, filename)
     image.save(filepath)
     return filename
@@ -123,7 +127,7 @@ def submit_sos():
             return jsonify({"error": "Unable to fetch location"}), 400
 
     if photo:
-        filename = save_image(photo)
+        filename = save_image(photo,emergency_level)
         
 
     print(f"New SOS Alert! \nName: {name} \nPhone: {phone} \nLocation: {location} \nAnimal Type: {animal_type} \nEmergency Level: {emergency_level} \nDescription: {description}")
