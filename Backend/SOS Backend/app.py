@@ -6,9 +6,6 @@ import random
 
 app = Flask (__name__)
 app.secret_key = 'your_secret_key'
-
-
-
 UPLOAD_FOLDER = r"C:\Users\91995\Desktop\PawPal\PawPal\Backend\SOS Backend\uploads"
 if not os.path.exists(UPLOAD_FOLDER):
     os.makedirs(UPLOAD_FOLDER)
