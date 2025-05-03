@@ -3,6 +3,7 @@ import requests
 import datetime
 import os
 import random 
+
 app = Flask (__name__)
 app.secret_key = 'your_secret_key'
 
@@ -19,7 +20,7 @@ def save_image(image, emergency_level):
     timestamp = datetime.datetime.now().strftime("%Y%m%d%H%M%S")
     filename = f"image_{timestamp}.jpg"
     level_folder = os.path.join(UPLOAD_FOLDER, emergency_level.lower())
-    filepath = os.path.join(UPLOAD_FOLDER, filename)
+    filepath = os.path.join(level_folder, filename)
     image.save(filepath)
     return filename
 
@@ -111,11 +112,12 @@ def submit_sos():
         return jsonify({"error": "Invalid phone number"}), 400
     
     
-    if animal_type not in ["dog", "cat"]:
+    if animal_type.lower() not in ["dog", "cat"]:
         return jsonify({"error": "Choose from dog or cat"}), 400
+
     
     
-    if emergency_level not in ["low", "medium", "high"]:
+    if emergency_level.lower() not in ["low", "medium", "high"]:
         return jsonify({"error": "Choose from low, medium, high"}), 400
     
     
