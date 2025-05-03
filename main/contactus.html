@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact Us - PawPal</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f9f9f9;
+      color: rgb(94, 58, 58);
+    }
+    header {
+      background: rgb(94, 58, 58);
+      color: white;
+      padding: 20px 0;
+      text-align: center;
+    }
+    .container {
+      width: 90%;
+      max-width: 1100px;
+      margin: auto;
+      padding: 30px 0;
+    }
+    h2 {
+      color: rgb(94, 58, 58);
+    }
+    .form-section, .info-section, .departments, .newsletter, .footer {
+      background: white;
+      border-radius: 8px;
+      padding: 30px;
+      margin-bottom: 30px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.05);
+    }
+    label {
+      display: block;
+      margin-top: 15px;
+      font-weight: bold;
+    }
+    input, select, textarea {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+    }
+    button {
+      background: rgb(94, 58, 58);
+      color: white;
+      padding: 12px 20px;
+      border: none;
+      border-radius: 6px;
+      margin-top: 20px;
+      cursor: pointer;
+    }
+    button:hover {
+      background: rgb(94, 58, 58);
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+    }
+    .newsletter input[type="email"] {
+      width: calc(100% - 130px);
+      display: inline-block;
+      margin-right: 10px;
+    }
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+    }
+    .footer-links ul {
+      list-style: none;
+      padding: 0;
+    }
+    .footer-links li {
+      margin-bottom: 8px;
+    }
+    footer {
+      text-align: center;
+      font-size: 14px;
+      padding: 20px;
+      background: #eee;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Contact Us</h1>
+  <p>Get in touch with our team — we're here to help</p>
+</header>
+
+<div class="container">
+
+  <!-- Contact Form -->
+  <section class="form-section">
+    <h2>Send Us a Message</h2>
+    <form>
+      <label for="name">Your Name</label>
+      <input type="text" id="name" placeholder="Aryan Raj" required>
+
+      <label for="email">Email Address</label>
+      <input type="email" id="email" placeholder="aryan@example.com" required>
+
+      <label for="subject">Subject</label>
+      <select id="subject" required>
+        <option value="">Select subject</option>
+        <option value="adoption">Adoption Services</option>
+        <option value="volunteer">Volunteer & Foster</option>
+        <option value="donation">Donations</option>
+        <option value="other">Other</option>
+      </select>
+
+      <label for="message">Your Message</label>
+      <textarea id="message" rows="5" placeholder="Please type your message here..." required></textarea>
+
+      <button type="submit">Send Message</button>
+    </form>
+  </section>
+
+  <!-- Location & Hours -->
+  <section class="info-section grid">
+    <div>
+      <h2>Visit Us</h2>
+      <p><strong>Our Location:</strong><br>123 ambedkar road <br>India,Laxmi nagar </p>
+    </div>
+    <div>
+      <h2>Hours of Operation</h2>
+      <p>Mon – Fri: 10am – 7pm<br>Saturday: 9am – 5pm<br>Sunday: 11am – 4pm</p>
+    </div>
+    <div>
+      <h2>Contact Information</h2>
+      <p>Phone: 7878787878 <br>Email: info@pawpal.org</p>
+    </div>
+  </section>
+
+  <!-- Departments -->
+  <section class="departments">
+    <h2>Department Contacts</h2>
+    <div class="grid">
+      <div>
+        <h3>Adoption Services</h3>
+        <p>Questions about adopting a pet?</p>
+        <p>Email: <a href="mailto:adoptions@pawpal.org">adoptions@pawpal.org</a><br>Phone: 7878787878 ext. 1</p>
+        <a href="#">View Available Pets</a>
+      </div>
+      <div>
+        <h3>Volunteer & Foster</h3>
+        <p>Want to help by volunteering or fostering?</p>
+        <p>Email: <a href="mailto:volunteer@pawpal.org">volunteer@pawpal.org</a><br>Phone: 7878787878 ext. 2</p>
+        <a href="#">Volunteer Information</a>
+      </div>
+      <div>
+        <h3>Donations</h3>
+        <p>Interested in making a donation?</p>
+        <p>Email: <a href="mailto:giving@pawpal.org">giving@pawpal.org</a><br>Phone: 7878787878 ext. 3</p>
+        <a href="#">Donation Options</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQs -->
+  <section class="info-section">
+    <h2>Frequently Asked Questions</h2>
+    <p>Find answers to common questions about our services, adoption process, and more.</p>
+    <a href="#">View FAQs</a>
+  </section>
+
+  <!-- Newsletter -->
+  <section class="newsletter">
+    <h2>Newsletter</h2>
+    <p>Subscribe to our newsletter for updates on available pets, events, and more.</p>
+    <form>
+      <input type="email" placeholder="Your email" required>
+      <button type="submit">Subscribe</button>
+    </form>
+    <p style="font-size: 13px; margin-top: 10px;">We respect your privacy. Unsubscribe at any time.</p>
+  </section>
+
+  <!-- Footer -->
+  <section class="footer">
+    <h2>PawPal</h2>
+    <p>Connecting pets with loving homes since 2013. Our mission is to rescue, rehabilitate, and rehome animals in need.</p>
+
+    <div class="footer-links grid">
+      <ul>
+        <li><strong>Quick Links</strong></li>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Meet Pets</a></li>
+        <li><a href="#">About Us</a></li>
+        <li><a href="#">Donate</a></li>
+        <li><a href="#">Volunteer</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+      <ul>
+        <li><strong>Resources</strong></li>
+        <li><a href="#">Pet Care Tips</a></li>
+        <li><a href="#">Adoption Guide</a></li>
+        <li><a href="#">FAQs</a></li>
+        <li><a href="#">Events</a></li>
+        <li><a href="#">Success Stories</a></li>
+        <li><a href="#">Blog</a></li>
+      </ul>
+    </div>
+  </section>
+
+</div>
+
+<footer>
+  &copy; 2025 PawPal. All rights reserved.
+</footer>
+
+</body>
+</html>
