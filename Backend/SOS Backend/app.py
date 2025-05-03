@@ -3,6 +3,7 @@ import requests
 import datetime
 import os
 import random 
+
 app = Flask (__name__)
 app.secret_key = 'your_secret_key'
 UPLOAD_FOLDER = r"C:\Users\91995\Desktop\PawPal\PawPal\Backend\SOS Backend\uploads"
@@ -16,7 +17,7 @@ def save_image(image, emergency_level):
     timestamp = datetime.datetime.now().strftime("%Y%m%d%H%M%S")
     filename = f"image_{timestamp}.jpg"
     level_folder = os.path.join(UPLOAD_FOLDER, emergency_level.lower())
-    filepath = os.path.join(UPLOAD_FOLDER, filename)
+    filepath = os.path.join(level_folder, filename)
     image.save(filepath)
     return filename
 
@@ -44,15 +45,17 @@ def home():
 def home1():
     return render_template('index.html')
 
-# @app.route('/aboutus')
-# def aboutus():
-#     return render_template('aboutus.html')
+@app.route('/contactus')
+def contact():
+    return render_template('contactus.html')
 
-
+@app.route('/faq')
+def faq():
+    return render_template('faq.html')
 # @app.route('/donate', methods=['POST'])
 
 # def donate():
-#     data = request.get_json()
+#     data = request.   get_json()
 
 #     name = data.get("name")
 #     email = data.get("email")
@@ -108,11 +111,12 @@ def submit_sos():
         return jsonify({"error": "Invalid phone number"}), 400
     
     
-    if animal_type not in ["dog", "cat"]:
+    if animal_type.lower() not in ["dog", "cat"]:
         return jsonify({"error": "Choose from dog or cat"}), 400
+
     
     
-    if emergency_level not in ["low", "medium", "high"]:
+    if emergency_level.lower() not in ["low", "medium", "high"]:
         return jsonify({"error": "Choose from low, medium, high"}), 400
     
     

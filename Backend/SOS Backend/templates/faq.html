@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>FAQs - PawPal</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/faq.css') }}">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+  <header class="header">
+    <div class="logo">
+      <i class="fa-solid fa-paw"></i>
+      <h1 class="site-title">PawPal</h1>
+    </div>
+    <div>
+      <ul class="nav-links">
+        <li><a href="/home">Home</a></li>
+        <li><a href="/meet-pets">Meet Pets</a></li>
+        <li><a href="/aboutus">About us</a></li>
+        <li><a href="/donate">Donate</a></li> 
+        <li><a href="/support">Support us</a></li>
+        <li><a href="/sos-report">SOS Report</a></li>
+        <li><a href="/faq">F&Qs</a></li>
+        <li><a href="/quiz">Quiz</a></li>
+        <li><a href="/contactus">Contact us</a></li>
+      </ul>
+    </div>
+  </header>    
+
+
+  <h1 class="heading">Frequently Asked Questions</h1>
+  <p>Find answers to common questions about our services and processes</p>
+
+
+<main class="main-content">
+  <section class="faq-section">
+    <div class="faq-item">
+      <button class="question">What is the adoption process?</button>
+      <div class="answer">
+        <p>To adopt a pet, browse our available animals, fill out the adoption application, and schedule a meet-and-greet. Our team will guide you through the next steps.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="question">What are the adoption fees?</button>
+      <div class="answer">
+        <p>Adoption fees typically range from $50 to $200 and include vaccinations, microchipping, and spay/neuter surgery.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="question">How can I volunteer?</button>
+      <div class="answer">
+        <p>Visit our Volunteer page, complete the interest form, and attend an orientation. Volunteers help with animal care, events, and more.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="question">What if the pet I adopt isn't a good fit?</button>
+      <div class="answer">
+        <p>We offer a return policy. If things don’t work out, we encourage you to contact us. We'll work with you to find a better match or take the pet back.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="question">How can I surrender a pet?</button>
+      <div class="answer">
+        <p>Contact our surrender team at <a href="mailto:intake@pawpal.org">intake@pawpal.org</a>. We’ll assess the situation and guide you through the process.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="help-box">
+    <h2>Still Have Questions?</h2>
+    <p>Our team is here to help! Reach out to us and we'll be happy to answer any questions you may have.</p>
+    <a href="/contactus" class="btn">Contact Us</a>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="footer-about">
+    <h3>PawPal</h3>
+    <p>Our mission is to rescue, rehabilitate, and rehome animals in need.</p>
+  </div>
+  <div class="footer-links">
+    <h3>Quick Links</h3>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="meet-pets.html">Meet Pets</a></li>
+      <li><a href="about.html">About Us</a></li>
+      <li><a href="donate.html">Donate</a></li>
+      <li><a href="support/volunteer.html">Volunteer</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </div>
+  <div class="footer-resources">
+    <h3>Resources</h3>
+    <ul>
+      <li><a href="#">Pet Care Tips</a></li>
+      <li><a href="#">Adoption Guide</a></li>
+      <li><a href="faq.html">FAQs</a></li>
+      <li><a href="#">Events</a></li>
+      <li><a href="#">Success Stories</a></li>
+      <li><a href="#">Blog</a></li>
+    </ul>
+  </div>
+  <div class="footer-newsletter">
+    <h4>Newsletter</h4>
+    <p>Subscribe for updates on available pets, events, and more.</p>
+    <input type="email" placeholder="Your email">
+    <p>We respect your privacy. Unsubscribe at any time.</p>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2025 PawPal. All rights reserved.</p>
+    <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a> | <a href="#">Accessibility</a>
+  </div>
+</footer>
+
+<script>
+  const questions = document.querySelectorAll(".question");
+  questions.forEach(q => {
+    q.addEventListener("click", () => {
+      const answer = q.nextElementSibling;
+      answer.style.display = answer.style.display === "block" ? "none" : "block";
+      q.classList.toggle("active");
+    });
+  });
+</script>
+
+</body>
+</html>
