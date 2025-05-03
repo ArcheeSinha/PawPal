@@ -52,11 +52,13 @@ def home1():
 def contact():
     return render_template('contactus.html')
 
-
+@app.route('/faq')
+def faq():
+    return render_template('faq.html')
 # @app.route('/donate', methods=['POST'])
 
 # def donate():
-#     data = request.get_json()
+#     data = request.   get_json()
 
 #     name = data.get("name")
 #     email = data.get("email")
