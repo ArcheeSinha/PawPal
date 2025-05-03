@@ -1,9 +1,12 @@
-from flask import Flask,request,jsonify,render_template,redirect,url_for
+from flask import Flask,request,jsonify,render_template,redirect,url_for,session
 import requests
 import datetime
 import os
 import random 
 app = Flask (__name__)
+app.secret_key = 'your_secret_key'
+
+
 
 UPLOAD_FOLDER = r"C:\Users\91995\Desktop\PawPal\PawPal\Backend\SOS Backend\uploads"
 if not os.path.exists(UPLOAD_FOLDER):
@@ -34,6 +37,10 @@ def get_real_time_location():
 
 @app.route('/')
 def home():
+    return render_template('index.html')
+
+@app.route('/home')
+def home1():
     return render_template('index.html')
 
 # @app.route('/donate', methods=['POST'])
@@ -235,13 +242,12 @@ def quiz():
         elif pet_experience == 'Experienced' and home_space == 'Large':
             recommended_pet = "Rocky"
         else:
-            # Random fallback if no exact match
             recommended_pet = random.choice([pet['name'] for pet in PETS])
 
-        # Find the pet object
         pet = next((pet for pet in PETS if pet['name'] == recommended_pet), None)
-        
+
         if pet:
+            session['pet'] = pet  # Save to session
             return redirect(url_for('result'))
         else:
             return "No matching pet found", 400
@@ -250,7 +256,10 @@ def quiz():
 
 @app.route('/result')
 def result():
-    return render_template('result.html')
+    pet = session.get('pet')
+    if not pet:
+        return redirect(url_for('quiz'))
+    return render_template('result.html', pet=pet)
 
 
 
