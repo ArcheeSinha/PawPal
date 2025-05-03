@@ -36,6 +36,15 @@
     gap: 4rem;
 }
 
+.nav-links li a {
+    display: inline-block;
+    transition: transform 0.3s ease-in-out;
+}
+
+.nav-links li a:hover{
+    transform: scale(1.1);
+}
+
 li a{
     color: rgb(255, 255, 255);
 }
