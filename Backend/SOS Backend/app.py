@@ -1,8 +1,7 @@
-from flask import Flask,request,jsonify
+from flask import Flask,request,jsonify,render_template,redirect,url_for
 import requests
 import datetime
 import os
-from flask import render_template
 import random 
 app = Flask (__name__)
 
@@ -33,6 +32,9 @@ def get_real_time_location():
     return None,None
 
 
+@app.route('/')
+def home():
+    return render_template('index.html')
 
 # @app.route('/donate', methods=['POST'])
 
@@ -113,9 +115,13 @@ def submit_sos():
         
 
     print(f"New SOS Alert! \nName: {name} \nPhone: {phone} \nLocation: {location} \nAnimal Type: {animal_type} \nEmergency Level: {emergency_level} \nDescription: {description}")
-    
    
-    return jsonify({"success": True, "location": location}), 200
+    return redirect(url_for('thank_you'))
+
+@app.route('/thankyou')
+def thank_you():
+    return render_template('thankyou.html')
+
 
 # @app.route('/support_us/volunteer', methods=['POST'])
 
@@ -203,6 +209,7 @@ PETS = [
 ]
 
 @app.route('/quiz', methods=['GET', 'POST'])
+
 def quiz():
     if request.method == 'POST':
         answers = request.form
@@ -235,27 +242,15 @@ def quiz():
         pet = next((pet for pet in PETS if pet['name'] == recommended_pet), None)
         
         if pet:
-            return render_template('result.html', pet=pet)
+            return redirect(url_for('result'))
         else:
             return "No matching pet found", 400
 
-    # GET request - show the form
     return render_template('quiz.html')
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+@app.route('/result')
+def result():
+    return render_template('result.html')
 
 
 
