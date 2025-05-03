@@ -57,8 +57,13 @@ def faq():
 def about():
     return render_template('aboutus.html')
 
+@app.route('/donate')
+def donate():
+    return render_template('donate.html')
 
-
+@app.route('/support')
+def support():
+    return render_template('supportus.html')
 # @app.route('/donate', methods=['POST'])
 
 # def donate():

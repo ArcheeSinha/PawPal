@@ -5,7 +5,7 @@
     font-family: 'Times New Roman', Times, serif;
     text-decoration: none;
     scroll-behavior: smooth;
-    list-style: none;/*To remove the dots from the top of screen*/
+    list-style: none;
 }
 .fa-paw{
     font-size: 2rem;
@@ -24,6 +24,10 @@
     color: white;
 }
 
+.site-title{
+    color: white;
+}
+
 .nav-links{
     display: flex;
     justify-content: flex-start;
@@ -33,6 +37,45 @@
 li a{
     color: rgb(255, 255, 255);
 }
+
+.container {
+    max-width: 700px;
+    margin: 50px auto;
+    padding: 30px;
+    background-color: #fff;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+  }
+  
+  h1 {
+    text-align: center;
+    color: rgb(139, 69, 19);
+  }
+  
+  p {
+    font-size: 1.1em;
+    color: #555;
+    line-height: 1.6;
+  }
+  
+  .donate-button {
+    display: block;
+    width: 200px;
+    margin: 30px auto;
+    padding: 15px 25px;
+    font-size: 16px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.2s, background-color 0.3s;
+  }
+  
+  .donate-button:hover {
+    background-color: #218838;
+    transform: scale(1.05);
+  }
 
 .footer {
     background-color: #8b4513;
@@ -60,6 +103,14 @@ li a{
     border: none;
 }
 
+.footer-newsletter p{
+    color: white;
+}
+
+.footer-about p{
+    color: white;
+}
+
 .footer-bottom {
     width: 100%;
     text-align: center;
@@ -68,7 +119,9 @@ li a{
     padding-top: 10px;
     font-size: 0.9rem;
 }
-
+.footer-bottom p{
+    color: white;
+}
 .footer-bottom a{
     color: white;
 }
