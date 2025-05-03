@@ -4,10 +4,31 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Contact Us - PawPal</title> 
-  <link rel="stylesheet" href="contactus.css" />
-</head>
-<body>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/contactus.css') }}">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
 
+</head>
+
+<body>
+  <header class="header">
+    <div class="logo">
+    <i class="fa-solid fa-paw"></i>
+    <h1 class="site-title">PawPal</h1>
+    </div>
+    <div>
+    <ul class="nav-links">
+        <li><a href="/home">Home</a></li>
+        <li><a href="/meet-pets">Meet Pets</a></li>
+        <li><a href="/aboutus">About us</a></li>
+        <li><a href="/donate">Donate</a></li> 
+        <li><a href="/support">Support us</a></li>
+        <li><a href="/sos-report">SOS Report</a></li>
+        <li><a href="faq">F&Qs</a></li>
+        <li><a href="/quiz">Quiz</a></li>
+        <li><a href="/contactus">Contact us</a></li>
+    </ul>
+    </div>
+</header>
 <header>
   <h1>Contact Us</h1>
   <p>Get in touch with our team — we're here to help</p>
@@ -88,50 +109,52 @@
     <p>Find answers to common questions about our services, adoption process, and more.</p>
     <a href="#">View FAQs</a>
   </section>
-
-  <!-- Newsletter -->
-  <section class="newsletter">
-    <h2>Newsletter</h2>
-    <p>Subscribe to our newsletter for updates on available pets, events, and more.</p>
-    <form>
-      <input type="email" placeholder="Your email" required>
-      <button type="submit">Subscribe</button>
-    </form>
-    <p style="font-size: 13px; margin-top: 10px;">We respect your privacy. Unsubscribe at any time.</p>
-  </section>
-
-  <!-- Footer -->
-  <section class="footer">
-    <h2>PawPal</h2>
-    <p>Connecting pets with loving homes since 2013. Our mission is to rescue, rehabilitate, and rehome animals in need.</p>
-
-    <div class="footer-links grid">
+  <footer class="footer">
+    <div class="footer-about">
+      <h4>PawPal</h4>
+      <p>Connecting pets with loving homes since 2013. Our mission is to rescue, rehabilitate, and rehome animals in need.</p>
+    </div>
+    <div class="footer-links">
+      <h4>Quick Links</h4>
       <ul>
-        <li><strong>Quick Links</strong></li>
-        <li><a href="#">Home</a></li>
-        <li><a href="#">Meet Pets</a></li>
-        <li><a href="#">About Us</a></li>
-        <li><a href="#">Donate</a></li>
-        <li><a href="#">Volunteer</a></li>
-        <li><a href="#">Contact</a></li>
+        <li><a href="/home">Home</a></li>
+            <li><a href="/meet-pets">Meet Pets</a></li>
+            <li><a href="/aboutus">About us</a></li>
+            <li><a href="/donate">Donate</a></li> 
+            <li><a href="/support">Support us</a></li>
+            <li><a href="/sos-report">SOS Report</a></li>
+            <li><a href="faq">F&Qs</a></li>
+            <li><a href="/quiz">Quiz</a></li>
+            <li><a href="/contactus">Contact us</a></li>
       </ul>
+    </div>
+    <div class="footer-resources">
+      <h4>Resources</h4>
       <ul>
-        <li><strong>Resources</strong></li>
         <li><a href="#">Pet Care Tips</a></li>
         <li><a href="#">Adoption Guide</a></li>
-        <li><a href="#">FAQs</a></li>
+        <li><a href="faq.html">FAQs</a></li>
         <li><a href="#">Events</a></li>
         <li><a href="#">Success Stories</a></li>
         <li><a href="#">Blog</a></li>
       </ul>
     </div>
-  </section>
+    <div class="footer-newsletter">
+      <h4>Newsletter</h4>
+      <p>Subscribe to our newsletter for updates on available pets, events, and more.</p>
+      <input type="email" placeholder="Your email">
+      <p>We respect your privacy. Unsubscribe at any time.</p>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 PawPal. All rights reserved.</p>
+      <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a> | <a href="#">Accessibility</a>
+    </div>
+  </footer>
+
 
 </div>
 
-<footer>
-  &copy; 2025 PawPal. All rights reserved.
-</footer>
+
 
 </body>
 </html>

@@ -48,9 +48,9 @@ def home():
 def home1():
     return render_template('index.html')
 
-# @app.route('/aboutus')
-# def aboutus():
-#     return render_template('aboutus.html')
+@app.route('/contactus')
+def contact():
+    return render_template('contactus.html')
 
 
 # @app.route('/donate', methods=['POST'])
