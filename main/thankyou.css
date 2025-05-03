@@ -48,10 +48,32 @@ body{
 }
 .thanks{
     height: 80vh;
-    font-size: 3rem;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
+
+    background-color: #ffffff;
+    background: rgba(255, 255, 255, 0.2);    
+    border: 2px solid #ddd;
+    /* backdrop-filter: blur(10px);    */
+    border-radius: 16px;
+    padding: 40px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    margin: 50px auto;
+    text-align: center;
+}
+
+.heading{
+    font-size: 4rem;
+}
+
+.p1{
+    font-size: 2rem;
+}
+.p2{
+    font-size: 2rem;
 }
 
 .footer {
