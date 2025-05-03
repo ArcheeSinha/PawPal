@@ -42,8 +42,34 @@
         <button class="button">Our History</button>
         </div>
       </div>
-      <img src="thankyou-image.jpg" alt="Doggy">
+      <img src = "{{ url_for('static', filename='images/thankyou-image.jpg') }}">
       </div>
+      <section class="team-section">
+        <h2 class="team-heading">Our Team Members</h2>
+        <div class="team-container">
+          <div class="team-card">
+            <img src="{{ url_for('static', filename='images/member2.jpg') }}" alt="Member 1">
+            <h3>Aryan Raj</h3>
+            <p>Frontend Developer – Designed the UI and developed the user-facing features using HTML, CSS, and React.</p>
+          </div>
+          <div class="team-card">
+            <img src="{{ url_for('static', filename='images/member1.jpg') }}" alt="Member 2">
+            <h3>Archee Sinha</h3>
+            <p>Backend Developer – Built the Flask backend, integrated APIs, and managed database operations.</p>
+          </div>
+          <div class="team-card">
+            <img src="{{ url_for('static', filename='images/member3.jpg') }}" alt="Member 3">
+            <h3>Anubha Mittal</h3>
+            <p>Frontend Designer – Crafted intuitive design layouts and ensured accessibility and responsiveness.</p>
+          </div>
+          <div class="team-card">
+            <img src="{{ url_for('static', filename='images/member4.jpg') }}" alt="Member 4">
+            <h3>Aryan Raj</h3>
+            <p>Project Manager – Coordinated tasks, ensured timely progress, and maintained communication with mentors.</p>
+          </div>
+        </div>
+      </section>
+      
 
       <footer class="footer">
         <div class="footer-about">
