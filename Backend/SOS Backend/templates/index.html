@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PawPal</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
 </head>
 <body>
@@ -42,8 +42,8 @@
     </div>
     <section class="meet-pets">
   
-        <div class="pet-card">
-            <img src="Golden.jpg" alt="" height="100px" width="200px">
+          <div class="pet-card">
+            <img src="{{ url_for('static', filename='images/Golden.jpg') }}" alt="" height="100px" width="200px">
             <h3>Buddy - Golden Retriever</h3>
             <p><strong>Buddy</strong> | Dog | 2 years • Male • Golden Retriever</p>
             <p>Buddy is a friendly and energetic dog who loves playing fetch and going for walks.</p>
@@ -51,7 +51,7 @@
           </div>
     
           <div class="pet-card">
-            <img src="tabbt.jpg" alt="" height="100px" width="200px">
+            <img src="{{ url_for('static', filename='images/tabbt.jpg') }}" alt="" height="100px" width="200px">
             <h3>Whiskers - Tabby</h3>
             <p><strong>Whiskers</strong> | Cat | 1 year • Female • Tabby</p>
             <p>Whiskers is a sweet and playful cat who loves to cuddle and chase toys around the house.</p>
@@ -59,7 +59,7 @@
           </div>
     
           <div class="pet-card">
-            <img src="labra.jpg" alt="" height="100px" width="200px">
+            <img src="{{ url_for('static', filename='images/Labra.jpg') }}" alt="" height="100px" width="200px">
             <h3>Max - Labrador</h3>
             <p><strong>Max</strong> | Dog | 3 years • Male • Labrador</p>
             <p>Max is a gentle and friendly dog who gets along well with children and other pets.</p>
@@ -67,11 +67,11 @@
           </div>
 
           <div class="pet-card">
-            <img src="calico.jpg" alt="" height="100px" width="200px">
+            <img src="{{ url_for('static', filename='images/calico.jpg') }}" alt="" height="100px" width="200px">
             <h3>Bella - Calico</h3>
             <p><strong>Bella</strong> | Cat | 2 years • Female • Calico</p>
             <p>Bella is a calm and affectionate cat who enjoys lounging in sunny spots and gentle pets.</p>
-            <button class="meet-button" onclick="window.location.href="https://google.com"">Meet Bella</button>
+            <button class="meet-button" >Meet Bella</button>
           </div>
     </section>
 

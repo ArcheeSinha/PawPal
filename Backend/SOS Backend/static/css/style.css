@@ -28,8 +28,9 @@
 .home{
     background-image: url(homepage.png);
     background-size: cover;
-    height: 65vh;
+    height: 80vh;
 }
+
 .nav-links{
     display: flex;
     justify-content: flex-start;

@@ -52,6 +52,13 @@ def contact():
 @app.route('/faq')
 def faq():
     return render_template('faq.html')
+
+@app.route('/aboutus')
+def about():
+    return render_template('aboutus.html')
+
+
+
 # @app.route('/donate', methods=['POST'])
 
 # def donate():
