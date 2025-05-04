@@ -98,6 +98,22 @@ def sos_report():
     return render_template('sos-report.html')
 
 
+
+
+if __name__ == '__main__':
+    app.run(debug=True)
+
+
+
+
+
+
+
+
+
+
+
+
 @app.route('/submit_sos', methods=['POST'])
 
 def submit_sos():
