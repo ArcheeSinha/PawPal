@@ -1,81 +1,114 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Donation page</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/donate.css') }}">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Donation page</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/donate.css') }}">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!-- Leaflet CSS for the map -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css" />
 </head>
 <body>
-    <header class="header">
-        <div class="logo">
-        <i class="fa-solid fa-paw"></i>
-        <h1 class="site-title">PawPal</h1>
-        </div>
-        <div>
-        <ul class="nav-links">
-            <li><a href="/home">Home</a></li>
-            <li><a href="/meet-pets">Meet Pets</a></li>
-            <li><a href="/aboutus">About us</a></li>
-            <li><a href="/donate">Donate</a></li> 
-            <li><a href="/support">Support us</a></li>
-            <li><a href="/sos-report">SOS Report</a></li>
-            <li><a href="faq">F&Qs</a></li>
-            <li><a href="/quiz">Quiz</a></li>
-            <li><a href="/contactus">Contact us</a></li>
-        </ul>
-        </div>
-    </header>
-
-    <div class="container">
-      <h1>Support Our Cause</h1>
-      <p>
-        Your donations help us rescue, feed, and treat animals in need. Whether it's ₹50 or ₹500, every contribution makes a difference.
-      </p>
-      <p>
-        Click the button below to make a secure donation. Thank you for your kindness and support!
-      </p>
-      <button class="donate-button">Donate Now</button>
+  <header class="header">
+    <div class="logo">
+      <i class="fa-solid fa-paw"></i>
+      <h1 class="site-title">PawPal</h1>
     </div>
+    <div>
+      <ul class="nav-links">
+        <li><a href="/home">Home</a></li>
+        <li><a href="/meet-pets">Meet Pets</a></li>
+        <li><a href="/aboutus">About us</a></li>
+        <li><a href="/donate">Donate</a></li>
+        <li><a href="/support">Support us</a></li>
+        <li><a href="/sos-report">SOS Report</a></li>
+        <li><a href="faq">F&Qs</a></li>
+        <li><a href="/quiz">Quiz</a></li>
+        <li><a href="/contactus">Contact us</a></li>
+      </ul>
+    </div>
+  </header>
 
-    <footer class="footer">
-        <div class="footer-about">
-          <h3>PawPal</h3>
-          <p>Our mission is to rescue, rehabilitate, and rehome animals in need.</p>
-        </div>
-        <div class="footer-links">
-          <h3>Quick Links</h3>
-          <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="meet-pets.html">Meet Pets</a></li>
-            <li><a href="about.html">About Us</a></li>
-            <li><a href="donate.html">Donate</a></li>
-            <li><a href="support/volunteer.html">Volunteer</a></li>
-            <li><a href="contact.html">Contact</a></li>
-          </ul>
-        </div>
-        <div class="footer-resources">
-          <h3>Resources</h3>
-          <ul>
-            <li><a href="#">Pet Care Tips</a></li>
-            <li><a href="#">Adoption Guide</a></li>
-            <li><a href="faq.html">FAQs</a></li>
-            <li><a href="#">Events</a></li>
-            <li><a href="#">Success Stories</a></li>
-            <li><a href="#">Blog</a></li>
-          </ul>
-        </div>
-        <div class="footer-newsletter">
-          <h3>Newsletter</h3>
-          <p>Subscribe for updates on available pets, events, and more.</p>
-          <input type="email" placeholder="Your email">
-          <p>We respect your privacy. Unsubscribe at any time.</p>
-        </div>
-        <div class="footer-bottom">
-          <p>&copy; 2025 PawPal. All rights reserved.</p>
-          <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a> | <a href="#">Accessibility</a>
-        </div>
-      </footer>
+  <div class="container">
+    <h1>Support Our Cause</h1>
+    <p>
+      Your donations help us rescue, feed, and treat animals in need. Whether it's ₹50 or ₹500, every contribution makes a difference.
+    </p>
+    <p>
+      Click the button below to make a secure donation. Thank you for your kindness and support!
+    </p>
+    <button class="donate-button">Donate Now</button>
+  </div>
+
+  <!-- Map Section -->
+  <hr>
+  <h2 style="text-align:center;">Find the nearest veterinary hospital or NGOs for help</h2>
+  <div id="map" style="height: 400px; width: 100%; margin-bottom: 40px;"></div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-about">
+      <h3>PawPal</h3>
+      <p>Our mission is to rescue, rehabilitate, and rehome animals in need.</p>
+    </div>
+    <div class="footer-links">
+      <h3>Quick Links</h3>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="meet-pets.html">Meet Pets</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="donate.html">Donate</a></li>
+        <li><a href="support/volunteer.html">Volunteer</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+    <div class="footer-resources">
+      <h3>Resources</h3>
+      <ul>
+        <li><a href="#">Pet Care Tips</a></li>
+        <li><a href="#">Adoption Guide</a></li>
+        <li><a href="faq.html">FAQs</a></li>
+        <li><a href="#">Events</a></li>
+        <li><a href="#">Success Stories</a></li>
+        <li><a href="#">Blog</a></li>
+      </ul>
+    </div>
+    <div class="footer-newsletter">
+      <h3>Newsletter</h3>
+      <p>Subscribe for updates on available pets, events, and more.</p>
+      <input type="email" placeholder="Your email">
+      <p>We respect your privacy. Unsubscribe at any time.</p>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 PawPal. All rights reserved.</p>
+      <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a> | <a href="#">Accessibility</a>
+    </div>
+  </footer>
+
+  <!-- Leaflet JS for the map -->
+  <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"></script>
+  <script>
+    var map = L.map('map').setView([28.6139, 77.2090], 12); // Example: New Delhi
+
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: 'Map data © OpenStreetMap contributors'
+    }).addTo(map);
+
+    const locations = [
+      { name: "Hope Vet Hospital", lat: 28.6200, lng: 77.2100 },
+      { name: "PawCare NGO", lat: 28.6150, lng: 77.2000 },
+      { name: "Animal Aid Foundation", lat: 28.6185, lng: 77.2250 },
+      { name: "Rescue4Paws Center", lat: 28.6100, lng: 77.2300 },
+      { name: "StrayHelp NGO", lat: 28.6050, lng: 77.2150 },
+    ];
+
+    locations.forEach(loc => {
+      L.marker([loc.lat, loc.lng])
+        .addTo(map)
+        .bindPopup(`<b>${loc.name}</b>`);
+    });
+  </script>
 </body>
 </html>

@@ -3,6 +3,9 @@ import requests
 import datetime
 import os
 import random 
+import smtplib
+from email.mime.text import MIMEText
+from email.mime.multipart import MIMEMultipart
 
 app = Flask (__name__)
 app.secret_key = 'your_secret_key'
@@ -99,21 +102,6 @@ def sos_report():
 
 
 
-
-if __name__ == '__main__':
-    app.run(debug=True)
-
-
-
-
-
-
-
-
-
-
-
-
 @app.route('/submit_sos', methods=['POST'])
 
 def submit_sos():
@@ -146,8 +134,8 @@ def submit_sos():
     
     if emergency_level.lower() not in ["low", "medium", "high"]:
         return jsonify({"error": "Choose from low, medium, high"}), 400
-    
-    
+
+
     if not location:
         lat, lng = get_real_time_location()
         if lat and lng:
