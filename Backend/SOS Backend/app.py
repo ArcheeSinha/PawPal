@@ -3,9 +3,6 @@ import requests
 import datetime
 import os
 import random 
-import smtplib
-from email.mime.text import MIMEText
-from email.mime.multipart import MIMEMultipart
 
 app = Flask (__name__)
 app.secret_key = 'your_secret_key'
@@ -60,41 +57,61 @@ def faq():
 def about():
     return render_template('aboutus.html')
 
-@app.route('/donate')
-def donate():
-    return render_template('donate.html')
 
 @app.route('/support')
 def support():
     return render_template('supportus.html')
-# @app.route('/donate', methods=['POST'])
 
-# def donate():
-#     data = request.   get_json()
 
-#     name = data.get("name")
-#     email = data.get("email")
-#     amount = data.get("amount")
+@app.route('/donate')
+def donate_page():
+    return render_template('donate.html')
+@app.route('/donate', methods=['POST'])
+def donate():
+    data = request.get_json()
 
-#     if not name or not email or not amount:
-#         return jsonify({"error": "Missing required fields"}), 400
+    name = data.get("name")
+    email = data.get("email")
+    amount = data.get("amount")
 
-#     if name.isdigit():
-#         return jsonify({"error": "Invalid name"}), 400
+    # Validate required fields
+    if not name or not email or not amount:
+        return jsonify({"error": "Missing required fields"}), 400
 
-#     if "@" not in email or "." not in email:
-#         return jsonify({"error": "Invalid email address"}), 400
+    # Validate name
+    if name.isdigit():
+        return jsonify({"error": "Invalid name"}), 400
 
-#     try:
-#         amount = float(amount)
-#         if amount <= 0:
-#             return jsonify({"error": "Amount must be greater than 0"}), 400
-#     except ValueError:
-#         return jsonify({"error": "Amount must be a number"}), 400
+    # Validate email
+    if "@" not in email or "." not in email:
+        return jsonify({"error": "Invalid email address"}), 400
 
-#     print(f"New Donation Received! \nName: {name} \nEmail: {email} \nAmount: ${amount}")
+    # Validate amount
+    try:
+        amount = float(amount)
+        if amount <= 0:
+            return jsonify({"error": "Amount must be greater than 0"}), 400
+    except ValueError:
+        return jsonify({"error": "Amount must be a number"}), 400
 
-#     return jsonify({"success": True, "message": "Thank you for your donation!"}), 200
+    # Print donation details (can be logged or stored in DB)
+    print(f"New Donation Received! \nName: {name} \nEmail: {email} \nAmount: ₹{amount}")
+
+    # Send success response with redirect info
+    return jsonify({
+        "success": True,
+        "message": "Redirecting to the qr code for payment!",
+        "redirect_url": url_for('payment_qr')
+    }), 200
+
+# Add this route to serve the QR page
+@app.route('/payment-qr')
+def payment_qr():
+    return render_template('payment_qr.html')
+                               
+
+
+
 
 @app.route('/sos-report', methods=['GET', 'POST'])
 def sos_report():

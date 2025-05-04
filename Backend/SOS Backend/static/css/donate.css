@@ -1,83 +1,153 @@
+/* Background setup */
 *{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Times New Roman', Times, serif;
-    text-decoration: none;
-    scroll-behavior: smooth;
-    list-style: none;
-}
-.fa-paw{
-    font-size: 2rem;
-} 
-.logo{
-    display: flex;
-    justify-content: flex-start; 
-    padding: 10px 10px;
-}
-.header{
-    height: 60px;
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    background-color: rgb(139, 69, 19);
-    color: white;
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  font-family: 'Times New Roman', Times, serif;
+  text-decoration: none;
+  scroll-behavior: smooth;
+  list-style: none;/*To remove the dots from the top of screen*/
 }
 
-.site-title{
-    color: white;
+.fa-paw{
+  font-size: 2rem;
+}
+
+.logo{
+  display: flex;
+  justify-content: flex-start;
+  padding: 10px 10px;
+}
+
+.header{
+  height: 60px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  background-color: rgb(139, 69, 19);
+  color: white;
 }
 
 .nav-links{
-    display: flex;
-    justify-content: flex-start;
-    gap: 4rem;
+  display: flex;
+  justify-content: flex-start;
+  gap: 4rem;
 }
 
 li a{
-    color: rgb(255, 255, 255);
+  color: white;
 }
 
-.container {
-    max-width: 700px;
-    margin: 50px auto;
-    padding: 30px;
-    background-color: #fff;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
-    border-radius: 12px;
+.site-title{
+  color: white;
+}
+body{
+  background-image: url(donationwaladoggy.jpg);
+}
+  /* Card styling */
+  .donation-card {
+    background-color: #ffffff;
+    padding: 40px 30px;
+    padding-right: 50px;
+    margin-left: 35%;
+    margin-top: 10px;
+    max-width: 450px;
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    border-radius: 20px;
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    animation: slideUp 0.5s ease-out;
+    justify-content: center;
+    /* align-items: center; */
   }
   
-  h1 {
-    text-align: center;
-    color: rgb(139, 69, 19);
+  h2 {
+    color: #2a2f4f;
+    margin-bottom: 10px;
+    font-size: 26px;
   }
   
   p {
-    font-size: 1.1em;
-    color: #555;
-    line-height: 1.6;
+    color: #5f5f5f;
+    font-size: 14px;
+    margin-bottom: 25px;
   }
   
-  .donate-button {
+  /* Input styling */
+  .input-group {
+    margin-bottom: 20px;
+    text-align: left;
+  }
+  
+  .input-group label {
+    font-weight: 600;
+    font-size: 14px;
+    color: #333;
+    margin-bottom: 6px;
     display: block;
-    width: 200px;
-    margin: 30px auto;
-    padding: 15px 25px;
-    font-size: 16px;
-    background-color: #28a745;
-    color: white;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: transform 0.2s, background-color 0.3s;
   }
   
-  .donate-button:hover {
-    background-color: #218838;
-    transform: scale(1.05);
+  .input-group input {
+    width: 100%;
+    padding: 12px;
+    font-size: 15px;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    transition: border 0.3s ease;
   }
-
-.footer {
+  
+  .input-group input:focus {
+    border-color: #917fb3;
+    outline: none;
+  }
+  
+  /* Button styling */
+  button {
+    background-color: #917fb3;
+    color: #ffffff;
+    padding: 12px 24px;
+    font-size: 16px;
+    border: none;
+    border-radius: 12px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 10px;
+  }
+  
+  button:hover {
+    background-color: #7a66a2;
+  }
+  
+  /* Message feedback */
+  #message {
+    margin-top: 15px;
+    font-size: 14px;
+    font-weight: 500;
+  }
+  
+  /* Animation */
+  @keyframes slideUp {
+    from {
+      transform: translateY(40px);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0px);
+      opacity: 1;
+    }
+  }
+  
+  /* Responsive */
+  @media (max-width: 500px) {
+    .donation-card {
+      padding: 30px 20px;
+    }
+  }
+  
+  .footer {
     background-color: #8b4513;
     color: white;
     padding: 40px 20px;
@@ -94,34 +164,31 @@ li a{
 .footer ul li a {
     color: white;
 }
-  
+
   .footer-newsletter input[type="email"] {
     padding: 8px;
     width: 100%;
     margin: 10px 0;
     border-radius: 4px;
     border: none;
-}
-
+    color: white;
+  }
 .footer-newsletter p{
-    color: white;
-}
-
-.footer-about p{
-    color: white;
+  color: white;
 }
 
 .footer-bottom {
     width: 100%;
     text-align: center;
     margin-top: 20px;
-    border-top: 1px solid rgba(255, 255, 255, 0.3);
+    border-top: 1px solid white;
     padding-top: 10px;
     font-size: 0.9rem;
 }
-.footer-bottom p{
+
+.footer-bottom a,p{
     color: white;
 }
-.footer-bottom a{
-    color: white;
+.footer-about p{
+  color: white
 }

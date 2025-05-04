@@ -106,7 +106,7 @@ body {
   }
   
   .footer {
-    background-color: #2A2F4F;
+    background-color: rgb(139, 69, 19);
     color: #fff;
     display: flex;
     flex-wrap: wrap;
@@ -114,6 +114,7 @@ body {
     padding: 2rem 1rem;
     margin-top: 4rem;
     gap: 2rem;
+    width: 100%;
   }
   
   .footer h4 {
@@ -170,4 +171,5 @@ body {
   .footer-bottom a:hover {
     text-decoration: underline;
   }
+
   
