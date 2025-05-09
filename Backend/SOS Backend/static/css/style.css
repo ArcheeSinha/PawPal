@@ -119,6 +119,7 @@ li a{
     margin-left: 10px;
     background-color: rgb(139, 69, 19);
     border: none;
+    cursor: pointer;
     border-radius: 2rem;
 }
 

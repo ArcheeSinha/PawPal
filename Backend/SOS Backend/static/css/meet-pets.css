@@ -167,7 +167,7 @@ body {
   }
   
   .footer {
-    background-color: #2A2F4F;
+    background-color: rgb(139, 69, 19);
     color: #fff;
     display: flex;
     flex-wrap: wrap;
